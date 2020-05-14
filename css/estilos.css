@@ -12,7 +12,7 @@
     height: 100vh;
     font-size: 11px;
   }
-
+    /* Responsividade para dispositivos*/ 
   @media (main-width: 350px) {
     body {
       font-size: 14.5px;
@@ -50,7 +50,7 @@
       font-size: 32px;
     }
   }
-    
+    /*Cabeçalho*/
   header{
     display: flex;
     height: 100vh;
@@ -58,11 +58,28 @@
     align-content: center;
     align-items: center;
   }
-  
+  .titulo{
+    opacity: 0;
+    transform: translateX(-15vw);
+    animation: ease-in 1.6s introTitulo forwards;
+  }
+  @keyframes introTitulo{
+    50%{
+      opacity: 0.5;
+      transform: translateX(-6vw);
+    }
+    100%{
+      opacity: 1;
+      transform: translateX(0vw);
+    }
+  }
   a {
     text-decoration: none;
     color: white;
+    font-size 1.5em;
+    transition: text-decoration 0.8s;
   }
+  a:active,
   a:hover {
     text-decoration: line-through;
     color: black;
@@ -75,6 +92,7 @@
     position: fixed;
     width: 100vw;
     top: 0;
+    z-index: 1;
   }
   .menu a{
     display: block;
@@ -103,11 +121,18 @@
   h3 {
     font-style: italic;
   }
+
+  /*Projetos*/
   .img-projetos{
     max-width: 50%;
     height: auto;
     object-fit: cover;
     border-radius: 5%;
+    transition: transform 450ms, border-radius 450ms;
+  }
+  .img-projetos:hover{
+    transform: scale(1.15);
+    border-radius: 0%
   }
 
   figcaption {
@@ -115,14 +140,18 @@
     padding: 0px 15px;  
   }
 
+  .contato,
   .Projetos{
     color:rgb(216, 216, 216);
     font-family: 'Play', sans-serif;
     font-size: 1.3;
+    min-height: 110vh;
   }
+  .contato h2,
   .Projetos h2{
     font-size: 2em;
     padding-bottom: 1.6em;
+    padding-top: 10vh;
   }
   .Projetos .grid{
     display: grid;
@@ -133,5 +162,22 @@
     text-align: center;
     align-items: center;
     justify-content: center;
+  }
+
+    /*Contatos */
+  .contato a{
+    color: whitesmoke;
+    font-size: 3.5em;
+    padding: 0.5em 0.8em;
+    transition: text-shadow 0.5s, font-size.4s;
+  }
+  .contato a:active,
+  .contato a:hover{
+    text-decoration: none;
+    text-shadow: 0 0 10px rgba(255,255,255,.4);
+    font-size: 3.65em;
+  }
+  .contato .icons{
+    text-align: center;
   }
 
